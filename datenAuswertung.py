@@ -1,4 +1,9 @@
-
+#!/usr/bin/python
+# vim: set fileencoding=utf-8 :
+#Anon(Creator), Ducky
+#09.November 2019
+#Datenauswertung
+#Changelog: Kopfzeile, 'Start', f.clear()
 def number_input():
   number_list = []
   print("Gib alle Werte nacheinander ein!")
@@ -32,20 +37,21 @@ def main(number_list):
       continue
 
     if auswahl == 0:
-      print ("1 = Beenden")
-      print ("2 = Alle Befehle")
-      print ("3 = Summe")
-      print ("4 = Minimum und Maximum")
-      print ("5 = Spannweite")
-      print ("6 = Länge")
-      print ("7 = Durchschnitt")
-      print ("8 = Varianz")
-      print ("9 = Standartabweichung")
-      print ("10 = Median")
-      print ("11 = Modalwert")
-      print ("12 = mittlere liniare Abweichung")
-      print ("13 = unteres Quartiel")
-      print ("14 = oberes Quartiel")
+        print ("""
+1 = Beenden
+2 = Alle Befehle
+3 = Summe
+5 = Spannweite
+6 = Länge
+7 = Durchschnitt
+8 = Varianz
+9 = Standartabweichung
+10 = Median
+11 = Modalwert
+12 = mittlere liniare Abweichung
+13 = unteres Quartil
+14 = oberes Quartil
+""")
 
     elif auswahl == 1:
       break
@@ -249,6 +255,17 @@ def oberes_Quartil (number_list):
 
   value = Median(quartiel_list)
   return value
+
+def start():
+	print(""" 
+		 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+		 |D|a|t|e|n|a|u|s|w|e|r|t|u|n|g|
+		 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+			             |b|y| |A|n|o|n|
+			             +-+-+ +-+-+-+-+
+		""")
+	number_list = number_input()
+	main(number_list)
 
 if __name__ == "__main__":
   number_list = number_input()
