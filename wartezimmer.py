@@ -1,11 +1,13 @@
 #!/usr/bin/python
 # vim: set fileencoding=utf-8 :
 #Ducky
-#09.11.2019
+#10.11.2019
 #Wartezimmer
 #Einbindung in Top-Programm
+import f
 def logo():
     print("""
+
  **       **                    **                
 /**      /**                   /**                
 /**   *  /**  ******   ****** ******  *****       
@@ -26,34 +28,36 @@ def logo():
 def start():
     liste=[]
     while 1:
+        f.clear()
         logo()
         eingabe=input("""
-(a) Leutis hinzufügen.
-(b) Leutis aufrufen.
-(c) Liste anzeigen.
-(d) Person suchen.
-(e) Allah, ich kann nicht mehr zu meinem Termin erscheinen
-(f) Ich will hier raus!
+(1) Leute hinzufügen
+(2) Leutis aufrufen
+(3) Liste anzeigen
+(4) Person suchen
+(5) Aus Liste streichen
+(x) Exit
 
 """)
-        if eingabe == "a":
+        if eingabe == "1":
             print()
             name=input("Geben sie einen Namen ein :")
             waslos=input("Geben sie einen Grund ein :")
             tupel=(name,waslos)
             liste.append(tupel)
-        elif eingabe == "b":
+        elif eingabe == "2":
             print()
             print("Patient", liste[0][0], "mit", liste[0][1],
                   "wird aufgerufen und aus der Warteschlange entfernt.")
             print()
             del liste[0]
-        elif eingabe == "c":
+        elif eingabe == "3":
             count=1
             for i in liste:
                 print(count, ":", i[0], "mit", i[1])
                 count=count+1
-        elif eingabe == "d":
+            input()
+        elif eingabe == "4":
             suche=input("Geben sie ihren zu suchenden Namen KORREKT ein :")
             counter=0
             for i in liste:
@@ -64,7 +68,7 @@ def start():
                     break
                 elif suche != liste[counter][0]:
                     counter=counter+1
-        elif eingabe == "e":
+        elif eingabe == "5":
             suche=input("Geben sie ihren zu suchenden Namen KORREKT ein :")
             counter=0
             for i in liste:
@@ -75,7 +79,9 @@ def start():
                     break
                 elif suche != liste[counter][0]:
                     counter=counter+1
-        elif eingabe == "f":
+                print("Der angegebene Name wurde nicht gefunden.")
+                input()
+        elif eingabe == "x":
             break
         else:
             print()
