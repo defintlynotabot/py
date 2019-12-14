@@ -3,13 +3,10 @@
 #Ducky
 #09.November 2019
 #Davids Top-Programm
-import f, vigenere, wartezimmer
+#Changelog: Banner, Datenauswertung
+import f, vigenere, wartezimmer, datenAuswertung
 while 1:
     print("""
-     ____    __  _  _  ____  ____    /___   
-    (  _ \  /__\( \/ )(_  _)(  _ \   / __)  
-     )(_) )/(__)\\  /  _)(_  )(_) )  \__ \  
-    (____/(__)(__)\/  (____)(____/   (___/  
      ____  _  _  ____  _   _  _____  _  _   
     (  _ \( \/ )(_  _)( )_( )(  _  )( \( )  
      )___/ \  /   )(   ) _ (  )(_)(  )  (   
@@ -18,11 +15,12 @@ while 1:
     ( \/\/ )(  _  )(  _ \(  )  (  _ \       
      )    (  )(_)(  )   / )(__  )(_) )      
     (__/\__)(_____)(_)\_)(____)(____/     
-      
+                                    Ducky, Anon
     """)
     print("""
     (1) Vigenere Ver- und Entschlüsselung
     (2) Virtuelles Wartezimmer
+    (3) Datenauswertung
     (x) Exit
     """)
     eingabe=input("Wählen Sie ein Programm aus :")
@@ -30,10 +28,15 @@ while 1:
         f.clear()
         vigenere.start()
         f.clear()
-###############################################
+##############################################
     if eingabe is "2":
-        f.clear
+        f.clear()
         wartezimmer.start()
+        f.clear()
+###############################################
+    if eingabe is "3":
+        f.clear()
+        datenAuswertung.start()
         f.clear()
 ###############################################
     if eingabe is "x":
